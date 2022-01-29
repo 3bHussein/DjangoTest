@@ -1,26 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TestDjango</title>
-</head>
-<body>
-    
+{% extends 'layout.html'%}
+
+
+{% block content %}
+
+
 
     <h1  style="text-align: center;">test</h1>
 
-{% comment %} {{stocks.P_name}} that for to get spicafic with Get() {% endcomment %} 
+    {% comment %} {{stocks.P_name}} that for to get spicafic with Get() {% endcomment %} 
+    
+    {% for stock in stocks%} 
+    
+    {{stock.P_name}}
+    
+    {{stock.P_status}}
+    -- 
+  
+    <a href="{% url 'stock' stock.P_id %}" class="btn btn-info mt-2 ">Detail</a>
+    <br>
+    {% endfor%}
 
-{% for stock in stocks%} 
 
-{{stock.P_name}}
+{% endblock content %}
 
-{{stock.P_status}}
--- 
-<br>
 
-{% endfor%}
-</body>
-</html>
