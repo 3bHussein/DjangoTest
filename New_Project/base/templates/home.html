@@ -1,13 +1,39 @@
 
 {% extends 'layout.html' %}
-
+{% load static %}
 
 {% block content %}
-
-
 <center>
 hello from home Page
 </center>
+<h5>All Products</h5>
+
+
+{% for product in products %}
+
+Name: {{product.name}} - Count : {{product.count}}
+
+<img src="{{ product.image }}" alt="img">
+<img src="{% static 'img/products/ssd.jpeg'%}" />
+
+<br>
+
+
+{% endfor%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 {% endblock content %}
