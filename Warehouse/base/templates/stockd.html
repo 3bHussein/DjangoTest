@@ -1,19 +1,25 @@
 {% extends 'layout.html' %}
 
-
-
-
-
 {% block content %}
+ <div style="text-align:center" class='mt-4'>
 
-<div style="text-align:center" class='mt-4'>
+Date: {%now 'D M Y'%}
+<br><br>
+{% comment %} It is {% now "SHORT_DATETIME_FORMAT" %} {% endcomment %}
 
 Name:{{stock.P_name}} 
 <br>
 count: {{stock.P_count}}
 <br>
+Date :{{stock.P_Date|date:"d-M-Y g:i:s A"}}
+<Br>
+Edit-Date{{stock.P_Date}}
+<br>
 <a href="/" class='btn btn-danger block'>back To Home</a>
-</div>
 
+
+
+
+</div>
 
 {% endblock content %}
