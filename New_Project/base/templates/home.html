@@ -3,21 +3,23 @@
 {% load static %}
 
 {% block content %}
-<center>
+{% comment %} <center>
 hello from home Page
-</center>
-<h5>All Products</h5>
-
-
+</center> {% endcomment %}
+<h5 class='mt-2'>All Products</h5>
+{% comment %}  {% endcomment %}
+<div class='mt-4'>
 {% for product in products %}
+<div class="card" style="width: 18rem;" class=''>
+    <img src="{% static product.image %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+       <a href="{% url 'product_details' product.id %}" class="btn btn-primary">Details</a>
+       <p class="card-text"><small class="text-muted">Count : {{product.count}}</small></p>
 
-Name: {{product.name}} - Count : {{product.count}}
-
-<img src="{{ product.image }}" alt="img">
-<img src="{% static 'img/products/ssd.jpeg'%}" />
-
-<br>
-
+    </div>
+  </div>
+</div>
 
 {% endfor%}
 
