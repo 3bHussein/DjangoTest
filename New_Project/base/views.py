@@ -10,5 +10,5 @@ def home(request):
 
 def product_details(request,pk):
     product=Stocks.objects.get(id=pk)
-    return render(request,'product.detail',{'product':product})
+    return render(request,'product.detail.html',{'product':product})
     
