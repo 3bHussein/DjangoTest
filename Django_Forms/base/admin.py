@@ -12,4 +12,6 @@ class stock(admin.ModelAdmin):
 
 admin.site.register(Supplers)
 
+adad
 
+    
